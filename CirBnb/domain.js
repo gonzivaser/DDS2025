@@ -1,11 +1,11 @@
-const Categoria = Object.freeze({
+export const Categoria = Object.freeze({
     Hotel: "Hotel", 
     Departamento: "Departamento", 
     Cabana: "Cabana", 
     Apart: "Apart",
 });
 
-class Alojamiento {
+export class Alojamiento {
     constructor(nombre, precioPorNoche, categoria) {
         this.nombre = nombre;
         this.precioPorNoche = precioPorNoche;
@@ -17,7 +17,7 @@ class Alojamiento {
     }
 }
 
-class Reserva {
+export class Reserva {
     constructor(alojamiento, diaInicio, diaFin) {
         if (!(diaInicio instanceof Date) || !(diaFin instanceof Date)) {
             throw new Error("Dia de Inicio y Dia de Fin deben ser instancias de Date");
@@ -57,7 +57,7 @@ class Reserva {
     }
 }
 
-class DescuentoFijo {
+export class DescuentoFijo {
     constructor(valor) {
         this.valor = valor;
     }
@@ -67,7 +67,7 @@ class DescuentoFijo {
     }
 }
 
-class DescuentoPorPorcentaje {
+export class DescuentoPorPorcentaje {
     constructor(porcentaje) {
         this.porcentaje = porcentaje;
     }
@@ -77,7 +77,7 @@ class DescuentoPorPorcentaje {
     }
 }
 
-class DescuentoPorCantidadDeNoches {
+export class DescuentoPorCantidadDeNoches {
     constructor(cantidadNoches, porcentaje) {
         this.cantidadNoches = cantidadNoches;
         this.porcentaje = porcentaje;
@@ -94,12 +94,4 @@ class DescuentoPorCantidadDeNoches {
 
 }
 
-// Exporto para el Index
-module.exports = {
-    Alojamiento,
-    Reserva, 
-    Categoria,
-    DescuentoFijo, 
-    DescuentoPorPorcentaje, 
-    DescuentoPorCantidadDeNoches
-};
+

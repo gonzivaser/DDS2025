@@ -1,5 +1,7 @@
-const { Alojamiento, Reserva, Categoria, DescuentoFijo, DescuentoPorPorcentaje, DescuentoPorCantidadDeNoches} = require('./domain');
-const { aumentarPrecioDiario, alojamientoMasCaro, filtrarPorPrecio, obtenerTotalReservas} = require('./funciones');
+import { Alojamiento, Reserva, Categoria, DescuentoFijo, DescuentoPorPorcentaje, DescuentoPorCantidadDeNoches } from "./domain.js";
+import { aumentarPrecioDiario, alojamientoMasCaro, filtrarPorPrecio, obtenerTotalReservas } from "./funciones.js";
+import figlet from "figlet";
+import chalk from "chalk";
 
 // Instancia de Alojamiento
 const alojamiento1 = new Alojamiento(
@@ -46,3 +48,23 @@ console.log(alojamientosFiltrados);
 
 const totalReservas = obtenerTotalReservas([reserva1]);
 console.log(`El total de reservas es: ${totalReservas}`);
+
+
+// BIBLIOTECA FIGLET
+figlet("CirBnb", function (err, data) {
+  if (err) {
+    console.log("Something went wrong...");
+    console.dir(err);
+    return;
+  }
+  console.log(data);
+});
+
+
+// BIBLIOTECA CHALK
+const log = console.log;
+// Combine styled and normal strings
+log(chalk.blue('Hello') + ' World' + chalk.red('!'));
+
+
+
